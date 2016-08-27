@@ -11,7 +11,7 @@ def run(a):
         a.choice()
     else:
         for letter in a.word:
-            print(letter)
+            print letter,
 
 
 run(a)

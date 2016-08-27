@@ -1,4 +1,5 @@
 import random
+from word import Word
 
 
 
@@ -9,10 +10,11 @@ class Main(object):
         self.dic={1:"a",2:"b",3: "c",4:"d",5:"e",6:"f",7:"g",8:"h",9:"i",10:"j",11:"k",12:"l",13:"m",14:"n",15:"o",16:"p",
         17:"q",18:"r",19:"s",20:"t",21:"u",22:"v",23:"w",24:"x",25:"y",26:"z"
         }
-        self.letter=[]
+        #self.letter=[]
         self.word=[]
         self.l=len(self.text)
-        self.text="This is a text message to try out if this script works or not. Good luck with that one, if the text is too short I will provide a loger one just for the fun."
+        self.create=Word()
+        self.text=self.create.text
 
 
 
@@ -29,14 +31,18 @@ class Main(object):
         self.word.append(self.first)
 
     def index(self):
+        self.letter=[]
+
         for index,char in enumerate(self.text): #runs trough the text
             if char.lower()==self.word[-1]: #checks for the last letter in word
                 if index<(self.l-1):
                     #if it's not the last letter
-                    #if char in ',.:;!?' and char != " ":
-                        #continue
-                    #else:
-                self.letter.append(self.text[index+1].lower()) #appends all possibilities in letter[]
+                    if self.text[index+1]  in ',.:;!?' or self.text[index+1] == " ":
+                        continue
+                    else:
+
+                        self.letter.append(self.text[index+1].lower())
+                     #appends all possibilities in letter[]
             else:
                 continue
 
