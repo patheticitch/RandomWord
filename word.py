@@ -11,6 +11,10 @@ class Word(object):
 
 
 
+
+
+
+
     #def make_string(self):
     #    self.text=self.doc[0]
         #return self.text
