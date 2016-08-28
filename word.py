@@ -1,12 +1,29 @@
 import slate
+import random
 
 
 class Word(object):
 
     def __init__(self):
-        with open('dawn.pdf') as f:
+
+        with open('raven.pdf') as f:
             self.doc=slate.PDF(f)
-            self.text=self.doc[0]
+            self.text=self.doc[random.randint(0,len(self.doc))]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

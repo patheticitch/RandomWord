@@ -4,23 +4,23 @@ from word import Word
 
 
 class Main(object):
-    text="This is a text message to try out if this script works or not. Good luck with that one"
+    a=Word()
+    text=a.text
+
 
     def __init__(self):
-        self.dic={1:"a",2:"b",3: "c",4:"d",5:"e",6:"f",7:"g",8:"h",9:"i",10:"j",11:"k",12:"l",13:"m",14:"n",15:"o",16:"p",
-        17:"q",18:"r",19:"s",20:"t",21:"u",22:"v",23:"w",24:"x",25:"y",26:"z"
-        }
-        #self.letter=[]
-        self.word=[]
-        self.l=len(self.text)
-        self.create=Word()
-        self.text=self.create.text
+        try:
+            self.dic={1:"a",2:"b",3: "c",4:"d",5:"e",6:"f",7:"g",8:"h",9:"i",10:"j",11:"k",12:"l",13:"m",14:"n",15:"o",16:"p",
+            17:"q",18:"r",19:"s",20:"t",21:"u",22:"v",23:"w",24:"x",25:"y",26:"z"
+            }
+            #self.letter=[]
+            self.word=[]
+            self.l=len(self.text)
+            self.du=int(raw_input("How long should your word be: "))-1
+        except ValueError:
+            print "Enter a number "
+            self.__init__()
 
-
-
-
-
-        self.du=int(raw_input("How long should your word be: "))-1
 
 
 
@@ -42,6 +42,7 @@ class Main(object):
                     else:
 
                         self.letter.append(self.text[index+1].lower())
+                        
                      #appends all possibilities in letter[]
             else:
                 continue
